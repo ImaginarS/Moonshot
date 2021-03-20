@@ -18,13 +18,17 @@ struct ContentView: View {
     let mission: Mission
     let people: [CrewMember]
     
-    @State private var showGreeting = true
+    @State private var showGreeting = false
     
     var body: some View {
         NavigationView {
             VStack{
-                Toggle("", isOn: $showGreeting)
-                
+                Toggle(isOn: $showGreeting) {
+                    showGreeting ? Text("Launch Dates") :  Text("Crew Names")
+                }
+                .padding()
+                .toggleStyle(SwitchToggleStyle(tint: .orange))
+
                 List(missions) { mission in
                     NavigationLink(
                         destination: MissionView(mission: mission, astronauts: self.astronauts))  {
@@ -42,6 +46,7 @@ struct ContentView: View {
                                 ForEach(0..<people.count) { value in
                                     Text(people[value].astronaut.name)
                                         .font(.caption)
+
                                 }
                             }
                         }
@@ -49,7 +54,18 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle("Moonshot")
-            
+//            .toolbar {
+//                ToolbarItemGroup(placement: .navigationBarTrailing) {
+//                    Button("Astronauts") {
+//                        print("Help tapped!")
+//                    }
+//                    Button("Date") {
+//                        print("Help tapped!")
+//                    }
+//                }
+//
+//
+//            }
         }
     }
     
