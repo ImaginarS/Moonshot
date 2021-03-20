@@ -11,6 +11,14 @@ struct AstronautView: View {
     let astronaut: Astronaut
     let missions: [Mission]
     
+    @State private var showGreeting = true
+
+    struct CrewMember: Codable {
+        let name: String
+        let role: String
+    }
+    var matches = [CrewMember]()
+
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
@@ -28,7 +36,6 @@ struct AstronautView: View {
                     Section(header: Text("Missions"), content: {
                         
                         List(self.missions) { mission in
-                            
                             Text(mission.displayName)
                                 .font(.headline)
                             

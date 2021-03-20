@@ -51,6 +51,8 @@ struct MissionView: View {
                         }
                         .padding(.horizontal)
                     }
+                    
+                    
                     Spacer(minLength: 25)
                 }
             }
@@ -68,6 +70,8 @@ struct MissionView: View {
                 fatalError("Missing \(member)")
             }
         }
+        print("\(matches)")
+
         self.astronauts = matches
     }
 }
