@@ -17,17 +17,15 @@ struct ContentView: View {
                 NavigationLink(
                     destination: MissionView(mission: mission, astronauts: self.astronauts) )
                 {
-                        Image(mission.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Image(mission.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     VStack(alignment: .leading) {
                         Text(mission.displayName).font(.headline)
                         Text(mission.formattedLaunchDate)
-
                     }
-                    }
-                
+                }
             }
             .navigationBarTitle("Moonshot")
         }

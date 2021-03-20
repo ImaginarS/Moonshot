@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct MissionView: View {
     struct CrewMember{
         let role: String
@@ -53,9 +51,6 @@ struct MissionView: View {
                         }
                         .padding(.horizontal)
                     }
-                    //                        HStack {
-                    //                    }
-                    
                     Spacer(minLength: 25)
                 }
             }
@@ -80,7 +75,6 @@ struct MissionView: View {
 struct MissionView_Previews: PreviewProvider {
     static let mission: [Mission] = Bundle.main.decode("missions.json")
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
-    
     
     static var previews: some View {
         

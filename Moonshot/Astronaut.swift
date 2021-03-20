@@ -1,5 +1,5 @@
 //
-//  Astronaut.swif.swift
+//  Astronaut.swift
 //  Moonshot
 //
 //  Created by Sandra Q on 3/17/21.
